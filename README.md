@@ -20,7 +20,7 @@ Without implementing the codes, [chaiNNer](https://github.com/chaiNNer-org/chaiN
 
 Otherwise, 
 - Refer to `./options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
--  
+-  Download pretrained weights from [Drive Link](https://drive.google.com/drive/folders/1RZ3BPlZck_sUutaE6OP-f_N5URFQZ-L3?usp=sharing) and place under ```model_zoo``` folder
 - Then run the following codes (taking `model_zoo/20_SR4X.pth` as an example):
 ```
 python models/test.py -opt options/test/HAT_SRx4_ImageNet-pretrain.yml
