@@ -6,27 +6,21 @@
 git clone https://github.com/CeviKle/KLETech-CEVI_Lowlight_Hypnotise_SRx4.git
 cd KLETech-CEVI_Lowlight_Hypnotise_SRx4
 ```
-### Installation
-Install Pytorch first.
-Then,
+
+## System Requirements
+NVIDIA GPU (minimum 24-32 GB for testing)
+### Installation/setup 
 ```
-pip install -r requirements.txt
-python setup.py develop
+docker pull niksx/image-superresolution
 ```
+Download the weights from this [Drive link](https://drive.google.com/drive/folders/1RZ3BPlZck_sUutaE6OP-f_N5URFQZ-L3?usp=sharing), and paste under ```HAT/``` folder
 
 ## To test the code with LR images 
-
-Without implementing the codes, [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) is a nice tool to run our models.
-
-Otherwise, 
-- Refer to `./options/test` for the configuration file of the model to be tested, and prepare the testing data and pretrained model.  
--  Download pretrained weights from [Drive Link](https://drive.google.com/drive/folders/1RZ3BPlZck_sUutaE6OP-f_N5URFQZ-L3?usp=sharing) and place under ```model_zoo``` folder
-- Then run the following codes (taking `model_zoo/20_SR4X.pth` as an example):
 ```
-python models/test.py -opt options/test/HAT_SRx4_ImageNet-pretrain.yml
+cd HAT
 ```
-The testing results will be saved in the `./results` folder.  
+Paste the testing images under ```HAT/test_images``` folder and then run, 
 
-- Refer to `./options/test/HAT_SRx4_ImageNet-LR.yml` for **inference** without the ground truth image.
-
-**Note that the tile mode is also provided for limited GPU memory when testing. You can modify the specific settings of the tile mode in your custom testing option by referring to `./options/test/HAT_tile_example.yml`.**
+```
+CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=1 hat/test.py -opt options/test/HAT_SRx4_ImageNet-LR.yml --launch pytorch
+```

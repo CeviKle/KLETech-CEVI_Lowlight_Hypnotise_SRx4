@@ -1,2 +1,3 @@
 .DS_Store
 model_zoo/20_SR4X.pth
+HAT/net_g_latest.pth
