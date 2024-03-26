@@ -8,7 +8,8 @@ cd KLETech-CEVI_Lowlight_Hypnotise_SRx4
 ```
 
 ## System Requirements
-NVIDIA GPU (minimum 24-32 GB for testing)
+NVIDIA GPU (minimum 24-32 GB for testing)  
+CUDA version >12.0
 ### Installation/setup 
 ```
 docker pull niksx/image-superresolution
