@@ -13,11 +13,11 @@ NVIDIA GPU (minimum 24-32 GB for testing)
 ```
 docker pull niksx/image-superresolution
 ```
-Download the weights from this [Drive link](https://drive.google.com/drive/folders/1RZ3BPlZck_sUutaE6OP-f_N5URFQZ-L3?usp=sharing), and paste under ```HAT/``` folder
+Download the weights from this [Drive link](https://drive.google.com/drive/folders/1RZ3BPlZck_sUutaE6OP-f_N5URFQZ-L3?usp=sharing), and paste under ```KLETech-CEVI_Lowlight_Hypnotise_SRx4/HAT/``` folder
 
 ## To test the code with LR images 
 ```bash
-cd KLETech-CEVI_Lowlight_Hypnotise_SRx4/HAT
+cd HAT
 ```
 Paste the testing images under ```HAT/test_images``` folder and then run, 
 
